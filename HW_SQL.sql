@@ -171,7 +171,7 @@ order by gross_revenue desc
 limit 5;
 
 -- 8a. In your new role as an executive, you would like to have an easy way of viewing the Top five genres by gross revenue. Use the solution from the problem above to create a view. If you haven't solved 7h, you can substitute another query to create a view.
-create view top_genres as  	
+create view top_five_genres as  	
     select name as genre, sum(amount) as gross_revenue
 	from category
 		join film_category using (category_id)
@@ -185,7 +185,7 @@ create view top_genres as
 
 
 -- 8b. How would you display the view that you created in 8a?
-Select * from top_genres;
+Select * from top_five_genres;
 
 -- 8c. You find that you no longer need the view `top_five_genres`. Write a query to delete it.
-drop view top_genres;
+drop view top_five_genres;
